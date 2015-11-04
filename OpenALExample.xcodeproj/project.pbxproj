@@ -42,6 +42,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		EB2F38111BEA6A0E00809419 /* farn.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB2F38101BEA6A0E00809419 /* farn.wav */; };
 		EB51839A1A9B835A00D0967B /* ElectricPianoA.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB5183991A9B835A00D0967B /* ElectricPianoA.wav */; };
 		EBBACC2A1A99CF6900ABE4CC /* Serial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBBACC281A99CF6900ABE4CC /* Serial.cpp */; };
 		F70FEEC40C86154F009D0E8D /* MyOpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = F70FEEC30C86154F009D0E8D /* MyOpenALSupport.c */; };
@@ -124,6 +125,7 @@
 		8BAF15530818573E00BAF972 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* OpenALExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenALExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB2F38101BEA6A0E00809419 /* farn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = farn.wav; sourceTree = "<group>"; };
 		EB5183991A9B835A00D0967B /* ElectricPianoA.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ElectricPianoA.wav; sourceTree = "<group>"; };
 		EBBACC281A99CF6900ABE4CC /* Serial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Serial.cpp; sourceTree = "<group>"; };
 		EBBACC291A99CF6900ABE4CC /* Serial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serial.h; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		8A02453F099A827F0041B443 /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
+				EB2F38101BEA6A0E00809419 /* farn.wav */,
 				5B20750E1AA4DEDB00DFB318 /* Digi.wav */,
 				5B20750F1AA4DEDB00DFB318 /* Drum.wav */,
 				5B2075101AA4DEDB00DFB318 /* Glass.wav */,
@@ -373,6 +376,7 @@
 				586ACEA51A5FB1FB007FEF30 /* Guitar.wav in Resources */,
 				8AFA688A084D49A80005575E /* sound_engine.wav in Resources */,
 				EB51839A1A9B835A00D0967B /* ElectricPianoA.wav in Resources */,
+				EB2F38111BEA6A0E00809419 /* farn.wav in Resources */,
 				8AF74CAA0A5DC7E100DBFBFE /* sound_voices.wav in Resources */,
 				586ACE9E1A5FB0DE007FEF30 /* Bass.wav in Resources */,
 				F7E188DE0EBB9009003AB44C /* MainMenu.xib in Resources */,

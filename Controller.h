@@ -297,7 +297,8 @@ enum	{
 - (void) listenerHandler:(float)x posY:(float)y posZ:(float)z;
 - (void) attitudeHandler:(float *)ori;
 - (void) objectHandler:(int)ID posX:(float)x posY:(float)y posZ:(float)z;
-- (void) playHandler:(int)zero :(int)one :(int)two :(int)three;
+- (void) allplayHandler:(int)zero :(int)one :(int)two :(int)three;
+- (void) playHandler:(int)sID :(int)play;
 - (void) gainHandler:(int)ID :(float)gain;
 - (void) distHBHandler:(float *)distL :(float *)distR;
 @end

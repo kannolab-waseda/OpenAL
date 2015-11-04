@@ -68,15 +68,24 @@ int object_handler(const char *path, const char *types, lo_arg ** argv,
 {
     Controller *controller = (Controller *)user_data;
     [controller objectHandler:argv[0]->i posX:argv[1]->f posY:argv[2]->f posZ:argv[3]->f-1000.0];
+
+    return 0;
+}
+
+int allplay_handler(const char *path, const char *types, lo_arg ** argv,
+                   int argc, void *data, void *user_data)
+{
+    Controller *controller = (Controller *)user_data;
+    [controller allplayHandler:argv[0]->i :argv[1]->i :argv[2]->i :argv[3]->i];
+    
     return 0;
 }
 
 int play_handler(const char *path, const char *types, lo_arg ** argv,
-                   int argc, void *data, void *user_data)
+                    int argc, void *data, void *user_data)
 {
     Controller *controller = (Controller *)user_data;
-    [controller playHandler:argv[0]->i :argv[1]->i :argv[2]->i :argv[3]->i];
-    
+    [controller playHandler:argv[0]->i :argv[1]->i];
     return 0;
 }
 
@@ -355,7 +364,8 @@ OSStatus  alcASAGetListenerProc(const ALuint property, ALvoid *data, ALuint *dat
     lo_server_thread_add_method(st, "/Listener", "fff", listener_handler, self);//angle, posX, posY, posZ
     lo_server_thread_add_method(st, "/Attitude", "fff", attitude_handler, self);//angle, posX, posY, posZ
     lo_server_thread_add_method(st, "/Object", "ifff", object_handler, self);//objectID (0~3), posX, posY, posZ
-    lo_server_thread_add_method(st, "/Play", "iiii", play_handler, self);//play:1 stop:0
+    lo_server_thread_add_method(st, "/AllPlay", "iiii", allplay_handler, self);//play:1 stop:0
+    lo_server_thread_add_method(st, "/Play", "ii", play_handler, self);//play:1 stop:0
     lo_server_thread_add_method(st, "/Gain", "if", gain_handler, self);//objectID(0~3), Gain(0.0~1.0)
     lo_server_thread_add_method(st, "/DistHB", "ffffffff", distHB_handler, self);//l1l2l3l4,r1r2r3r4
 
@@ -1213,7 +1223,7 @@ OSStatus  alcASAGetListenerProc(const ALuint property, ALvoid *data, ALuint *dat
 
 }
 
-- (void) playHandler:(int)zero :(int)one :(int)two :(int)three {
+- (void) allplayHandler:(int)zero :(int)one :(int)two :(int)three {
     NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
     [[view scene] setSourcePlayState:0 :zero];
     [[view scene] setSourcePlayState:1 :one];
@@ -1221,6 +1231,13 @@ OSStatus  alcASAGetListenerProc(const ALuint property, ALvoid *data, ALuint *dat
     [[view scene] setSourcePlayState:3 :three];
 
 	[view setNeedsDisplay:YES];
+    [pool release];
+}
+
+- (void) playHandler:(int)sID :(int)play{
+    NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+    [[view scene] setSourcePlayState:sID :play];
+    [view setNeedsDisplay:YES];
     [pool release];
 }
 

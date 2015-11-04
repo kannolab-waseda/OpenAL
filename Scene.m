@@ -385,10 +385,10 @@ void InitializeSourcesAndPlay()
 		mHasInput = false;
 		
 		//4 WAV files in the application bundle resources
-		gSourceFile[0] = "Pad";
-		gSourceFile[1] = "Drum";
-		gSourceFile[2] = "Glass";
-		gSourceFile[3] = "Digi";
+		gSourceFile[0] = "farn";
+		gSourceFile[1] = "farn";
+		gSourceFile[2] = "farn";
+		gSourceFile[3] = "farn";
 	
 		mCurrentObject = -1;
 		mCenterOffset = kSquareSize/2.0;
